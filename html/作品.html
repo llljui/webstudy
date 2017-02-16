@@ -1,0 +1,152 @@
+\<!DOCTYPE html>
+<html>
+<head>
+	<title>作品展示</title>
+	<meta charset="utf-8">
+	<meta name="keyword" content="作品">
+	<meta name="decription" content="zuopinzhangshi">
+</head>
+<style type="text/css" src='../css/font.css'></style>
+<style type="text/css">
+body{margin: 0; }
+.shengti{width: 1330px;height: 900px;margin: 0 auto; background: url(../img/beijing8.jpg);}
+.musics{ width: 900px; height: 90px;margin: 0 auto 5px; }
+.biaoti{ width: 900px;height: 90px; margin: 0 auto;}
+.liebiao{border: 1px solid #000;width: 900px; height: 40px; margin: 5px auto; background:url(../img/beijing4.jpg);}
+.videos{border: 1px solid #000; width: 360px; height:206px; margin-left:214px; margin-top:5px; position: absolute;}
+.pic{border:1px solid #000;width: 520px;height: 360px;margin-left:593px; margin-top:5px;  position: absolute;box-shadow: -10px 10px 10px; }
+.pic img{float: left; width: 520px;height: 360px;position:absolute;}
+.niandai li{display:block;float: left; margin:-5px 30px;font-family:'KaiTi'; font-weight:bold; }
+.niandai li:hover{background:#030;box-shadow: 5px 5px 5px;cursor:pointer;color: #5ca;}
+
+</style>
+<body>
+			<div class="shengti">
+
+			<div class="biaoti" style="background:url(../img/beijing1.jpg);">
+				 
+				 <div class="musics"> 
+				 		 <img src="../img/xxjqxz.jpg" height="85px">
+				         <img src="../img/softstar.jpg" height="30px">
+						 <div style="float:right;width:320px;height:55px;margin-right:-17px;overflow:hidden; margin-top:33px;">
+							 <marquee scrollamount='3' width='300px' height='25px' margin-bottom='10'>现在播放的是仙剑-萌萌哒天团</marquee>
+							 <embed src="../music/xianjian.mp3" height='60px' width="300px" margin-top='0' position='absolute' style="opacity:0.3;">
+							 </embed> 
+
+						 </div>
+						
+						 
+				 </div>
+			</div>
+			<div class="liebiao">
+						<ul class="niandai">
+							<li>仙剑奇侠传一</li>
+							<li>仙剑奇侠传二</li>
+							<li>仙剑奇侠传三</li>
+							<li>仙剑奇侠传三外传</li>
+							<li>仙剑奇侠传四</li>
+							
+						</ul>
+			</div>
+			<div class="videos"> 
+				<div style="width:360px;height:360px;margin-top:0px;">
+					<video src="../video/xj.mp4" controls="controls" height="206px" style="width:360px; ">
+					</video>
+				</div>
+
+			</div>
+			<div class="pic">
+
+					<img src="../img/a1.jpg">
+					<img src="../img/a2.jpg">
+					<img src="../img/a3.jpg">
+					<img src="../img/a4.jpg">
+					<img src="../img/a5.jpg">
+					<img src="../img/a6.jpg">
+					<img src="../img/a7.jpg">
+					<img src="../img/a8.jpg">
+					<img src="../img/a9.jpg">
+					<img src="../img/a10.jpg">
+					<img src="../img/a11.jpg">
+					<img src="../img/a12.jpg">
+					<img src="../img/a13.jpg">
+					<img src="../img/a14.jpg">
+					<img src="../img/a15.jpg">
+					<div id="zuo" style="background: #FFE1FF;width:20px;height:360px;position:absolute;cursor:pointer;"><h1 style="margin-left:-13;margin-top:140px;">《</h1></div>
+					<div id="you" style="background: #FFE1FF; width:20px;height:360px;position:absolute;margin-left:500px;cursor:pointer;"><h1 style="margin-top:140px;background:#ffffff;">》</h1></div>
+			</div>
+
+			<div style="clear:both;"></div>
+			</div>
+
+
+
+
+
+<script type="text/javascript" src='../jquery/3.1.0.js'></script>
+<script type="text/javascript">
+/*1.这里制作相框============================================*/
+				$('#zuo').css('opacity','0');
+				$('#you').css('opacity','0');
+				$('#zuo').hover(function () {
+				$('#zuo').css('opacity','0.5');
+				
+				},
+							function () {
+				$('#zuo').css('opacity','0');
+				
+				})//鼠标放在相框上的时候显示
+				$('#you').hover(function () {
+				$('#you').css('opacity','0.5');
+				
+				},
+							function () {
+				$('#you').css('opacity','0');
+				
+				})//鼠标放在相框上的时候显示
+				
+				var n=15;
+				var m;
+				var mn=n;				
+				$('#zuo').mousedown(function (mn) {
+                    
+					var b=n;				
+					b--;
+				  	n=b;					
+				        if (n==0) {
+				    	
+				    
+				              							 
+				    	$('.pic img:not('+n+')').css('opacity','0');
+				        $('.pic img:eq('+n+')').css('opacity','1');
+				        console.log(n);
+				        n=15;}
+
+				        else  {
+				        $('.pic img:not('+n+')').css('opacity','0');	
+				        $('.pic img:eq('+n+')').css('opacity','1');	
+				 console.log(n);}
+
+				})	
+
+
+				$('#you').mousedown(function (mn) {
+					m=n;
+				    m++;			   
+				    n=m;
+				    if (n>14) {
+				    	n=1;
+				    	$('.pic img:not('+n+')').css('opacity','0');
+				        $('.pic img:eq('+n+')').css('opacity','1');	console.log(n);
+				       }
+				        else  {
+				        $('.pic img:not('+n+')').css('opacity','0');	
+				        $('.pic img:eq('+n+')').css('opacity','1');	
+				       		
+				 console.log(n);} 
+				 
+				})	
+
+</script>
+</body>
+</html>

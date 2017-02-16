@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>照片墙</title>
+	<meta charset="utf-8">
+	<meta name="keyword" content="">
+	<meta name="decription" content="">
+</head>
+<style type="text/css">
+body{margin: 0;}
+#qiang {border: 1px solid #888;width: 1000px;height: 200px;margin: 200px auto; perspective: 800PX;}
+#qiang img{box-shadow: 5px 5px 5px; border: 1px solid #400;width: 200px;height: 200px; position:absolute;clear: both; margin-left:400px; vertical-align: middle;padding: 0 auto;}
+#zuo{float: top; z-index:1;position:absolute;margin-left: 400px;margin-top: 100px;cursor: pointer;}
+#you{float: top;z-index:1;position: absolute;margin-left: 585px;margin-top: 100px;cursor: pointer;}
+</style>
+<body>
+<div id="qiang">
+<h1 id="zuo"><</h1>
+<h1 id="you">></h1>
+<img src="../img/a1.jpg" alt="无" style="z-index:-1;opacity:1;">
+<img src="../img/a2.jpg" alt="无" style="z-index:-1;opacity:1;">
+<img src="../img/a3.jpg" alt="无" style="z-index:-1;opacity:1;">
+<img src="../img/a4.jpg" alt="无" style="z-index:-1;opacity:1;">
+<img src="../img/a5.jpg" alt="无" style="z-index:-1;opacity:1;">
+</div>
+<script type="text/javascript">
+var btn1=document.getElementById('zuo');
+var btn2=document.getElementById('you');
+var ph=document.querySelectorAll('#qiang img');
+var i=0;
+var k=1;
+
+
+
+
+
+
+
+btn1.onclick=function () {
+		for (var i=1;i<ph.length;i++) {
+	
+	ph[i].style.transition='';
+	ph[i].style.transform='translateX('+i*100*k+'px)';
+	ph[i].style.opacity='1';
+	ph[i].style.transition='2s';
+	/*ph[i].style.zIndex='+1+k+';*/
+	k=-k;
+		
+	}
+
+};
+btn2.onclick=function () {
+	for (var i=0;i<ph.length;i++) {
+		
+	ph[i].style.transition='';
+	ph[i].style.transform='translateX('+i*100*k+'px)';
+	ph[i].style.opacity='1';
+	ph[i].style.transition='2s';
+	ph[i].style.zIndex='+1+k+';
+	k=-k;
+		
+	}
+};
+
+
+</script>
+</body>
+</html>

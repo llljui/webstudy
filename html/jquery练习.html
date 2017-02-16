@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>标题</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<div class="da">
+<ul id="zhon">
+<li id="one">1</li>
+<li>2adc如若</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+<li id="two">7</li>
+<li style="display:none;">8</li>
+<li>9</li>
+<li><h1>标题</h1></li>
+</ul>
+<ul></ul>
+<li></li>
+<div class="te"><p>adc如若</p></div>
+<div style="width:10px height:10px; border:1px solid #ffffff;">is me</div>
+<div style="width:15px height:10px; border:1px solid #ffffff; font-size: normal; " title="test">is me</div>
+</div>
+<div style="visibility:hidden;width:10px height:10px; border:1px solid #ffffff;"></div>
+<input type="button" name="2" value="按钮1" class="btn1">
+<input type="button" name="4" value="按钮2" class="btn2">
+<input type="button" name="1" value="按钮3" class="btn3">
+<input type="button" name="5" value="按钮4" class="btn4">
+<input type="button" name="8" value="按钮5" class="btn5">
+<input type="button" name="0" value="按钮6" class="btn6">
+<input type="checkbox" name="">sdsds
+<input type="checkbox" name="">sdsds
+<input type="checkbox" name="">sdsds
+<input type="radio" name="">sdsds
+<script type="text/javascript" src='../jquery/3.1.0.js'></script>
+<script type="text/javascript">
+$('.btn1').click((function () {
+
+	$('li:first').css('background','#ddd');
+	$('li:last').css('background','#343443');
+	$('li:even').css('background','#545');
+	$('li:odd').css('background','#877');
+	$('li:gt(2)').css('background','#666');
+	$('li:eq(2)').css('background','#888');
+	$('li:lt(2)').css('background','#ffffff');
+	$('li:not(#one)').css('background','#ccc');
+	$(':header').css('background','#666');
+	$(':animated').css('background','#666');//正在执行动画的
+}))//这个是基本过滤选择器
+$('.btn2').click(function () {
+ 	$('body li').css('background','#222');
+ 	$('#zhon li:lt(2)').css('background','#ddd');
+ 	$('ul > li:eq(3)').css('background','#999');
+ 	$('#one + li').css('background','#399');//+这个是某元素后面其他某个下一个元素span div均需要相邻
+ 	$('#one ~ li').css('background','#445');//id为one的后面所有‘兄弟’元素
+    $('#two').nextAll('li:last').css('background','#555');
+    $('#two').prevAll('li').css('background','#ffd');
+})//基本层次选择器
+  $('.btn3').click(function () {
+  	$('li:empty').css('background','#666');
+  	$('li:contains(a)').css('background','#911');
+  	$('ul:has(#one)').css('background','#030')//含有calss，id为xx的父级元素
+  	$('li:parent').css('background','#ccc')//非空的div
+  })
+//内容过滤选择器
+ $('.btn4').click(function () {
+ 	console.log($('li:visible').length);
+ 	console.log($('li:hidden').length);
+ 	$('li:visible').show(1000).css('background','#ddc');
+ 	$('li:hidden').show(1000).css('background','#030');
+ 	//$('div:hidden').css('background','#89c');
+ })
+//可见和不可见性的选择器
+
+ $('.btn5').click(function () {
+ 	$('div[style]').css('background','#ff8');
+ 	$('div[title=test]').css('background','#698');
+ 	$('div[title!=test]').css('background','#123');
+ 	$('div[title^=te]').css('background','#523');
+ 	$('div[title$=st]').css('background','#ed3');
+ 	$('div[title*=te]').css('background','#adc');
+ 	$('li[id]').css('background','#cdc');
+ })
+//属性过滤选择器
+
+ $('.btn6').click(function () {
+ 	console.log($('li:visible').length);
+ 	console.log($('li:hidden').length);
+ 	$('#zhon :nth-child(2n)').css('background','#ddc');
+ 	$('#zhon :only-child').css('background','#999');//规定属于其父元素的唯一子元素 还有first-child last-child 
+ })
+//子元素过滤选择器
+</script>
+
+</body>
+
+</html>
